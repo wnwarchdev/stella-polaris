@@ -1,0 +1,147 @@
+/*Variables*/
+
+$font-thin: 100;
+$font-xlight: 200;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+$color-text-01: #fff;
+
+$color-shape-01: #fff;
+$color-shape-02: #17daa3;
+
+/* font-family: 'Signika', sans-serif; */
+/*Fix*/
+
+*, *::before, *::after {
+        box-sizing: border-box;
+}
+
+/*Global*/
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight:$font-regular;
+  background:gray;
+  margin:0;
+}
+
+section {
+  border:1px solid red;
+}
+
+img {
+  border: 1px solid yellow;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 0;
+    margin: 0 auto;
+    border:3px solid red;
+    text-align:center;
+    position:relative;
+}
+
+.bold {
+  font-weight: $font-bold;
+}
+
+h1 {
+  font-weight: $font-thin;
+  font-size: 60px;
+  line-height:1;
+}
+
+h2 {
+
+  font-weight: $font-xlight;
+  font-size: 60px;
+  line-height:1;
+
+}
+
+
+h3 {
+  font-weight: $font-regular;
+  font-size: 18px;
+  line-height:1;
+}
+
+.btn {
+  border:2px solid $color-shape-01;
+  width:180px;
+  height: 50px;
+  border-radius: 90px;
+  font-weight: $font-bold;
+  color: $color-text-01;
+}
+
+.btn-light {
+  background:none;
+}
+
+.btn-color {
+  background: $color-shape-02;
+}
+
+/*Splash*/
+
+.splash {
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("https://i.postimg.cc/3xtyhsPT/Photo-copy.png");
+}
+
+.navigation-top {
+  margin-top:50px;
+  border: 2px solid white;
+}
+
+
+.navigation-top img{
+ position: absolute;
+ left: 0;
+}
+nav {
+  display:flex;
+  justify-content:flex-end;
+
+}
+.logo {
+}
+
+ul {
+  list-style:none;
+  margin: 0;
+  padding: 0;
+  li {
+    text-align: right;
+    display: inline-block;
+    border:1px solid black;
+    padding-left:70px;
+    padding-top: 5px;
+    font-weight: $font-bold;
+    a {
+      color:$color-text-01;
+    }
+    ul {
+      li{
+        display:none;
+      }
+    }
+  }
+}
+
+.splash-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    color:$color-text-01;
+  border: 1px solid orange;
+}
