@@ -6,10 +6,16 @@ $font-regular: 400;
 $font-medium: 500;
 $font-bold: 700;
 
-$color-text-01: #fff;
+$color-white: #fff;
+$color-black: #000;
 
-$color-shape-01: #fff;
-$color-shape-02: #17daa3;
+$color-background-gray: #f9f9fa;
+
+$color-gray: #edeff1;
+$color-accent01: #17daa3;
+$color-headline: #576671;
+
+$color-text: #87949e;
 
 /* font-family: 'Signika', sans-serif; */
 /*Fix*/
@@ -20,15 +26,27 @@ $color-shape-02: #17daa3;
 
 /*Global*/
 
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   font-weight:$font-regular;
-  background:gray;
+  font-size: 18px;
+  background:$color-white;
   margin:0;
+  color: $color-text;
 }
 
 section {
-  border:1px solid red;
+  border:1px solid violet;
 }
 
 img {
@@ -36,7 +54,7 @@ img {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1500px;
     padding: 0;
     margin: 0 auto;
     border:3px solid red;
@@ -52,6 +70,7 @@ h1 {
   font-weight: $font-thin;
   font-size: 60px;
   line-height:1;
+
 }
 
 h2 {
@@ -59,7 +78,7 @@ h2 {
   font-weight: $font-xlight;
   font-size: 60px;
   line-height:1;
-
+  color: $color-headline;
 }
 
 
@@ -70,12 +89,12 @@ h3 {
 }
 
 .btn {
-  border:2px solid $color-shape-01;
+  border:2px solid $color-accent01;
   width:180px;
   height: 50px;
   border-radius: 90px;
   font-weight: $font-bold;
-  color: $color-text-01;
+  color: $color-white;
 }
 
 .btn-light {
@@ -83,7 +102,34 @@ h3 {
 }
 
 .btn-color {
-  background: $color-shape-02;
+  background: $color-accent01;
+}
+
+
+.title-block {
+ border:1px solid olive;
+ position: relative;
+ height:410px;
+ h2{
+   margin-top:110px;
+ }
+}
+
+.title-block::after {
+    position: absolute;
+    content: '';
+    content: "";
+    top: 48%;
+    left: 50%;
+    width: 30px;
+    height: 1px;
+    transform: translateX(-50%);
+    background: $color-accent01;
+}
+
+.wrapper {
+
+  display:flex;
 }
 
 /*Splash*/
@@ -126,7 +172,7 @@ ul {
     padding-top: 5px;
     font-weight: $font-bold;
     a {
-      color:$color-text-01;
+      color:$color-white;
     }
     ul {
       li{
@@ -142,6 +188,160 @@ ul {
     left: 50%;
     transform: translate(-50%,-50%);
     text-align:center;
-    color:$color-text-01;
+    color:$color-white;
   border: 1px solid orange;
 }
+
+
+/*About*/
+
+.about .fas {
+  font-size: 60px;
+  background: $color-gray;
+  border-radius: 50%;
+  line-height: 180px;
+  width: 180px;
+  color: $color-text;
+}
+
+.about h4 {
+  font-size: 30px;
+  margin: 80px 10px 0px;
+  color: $color-black;
+}
+
+.about p {
+
+  margin: 50px 10px 0px;
+}
+
+.about .btn {
+
+  margin: 100px 0;
+}
+
+
+
+/*Work*/
+
+section .work,
+section .location{
+    padding: 100px 0;}
+
+.work-image{
+  width:50%;
+  border:1px solid red;
+  position: absolute;
+  left:50%;
+  max-height: 750px;
+
+}
+
+
+.work-image img {
+  object-fit: cover;
+      height: 100%;
+      width: 100%;
+}
+
+.work-text,
+.location-text {
+  width:50%;
+  border:1px solid pink;
+  text-align: left;
+  h2 {
+    margin: 160px 0 0 0;
+  }
+  p {
+    margin: 80px 0;
+  }
+
+}
+
+.work .btn {
+  margin: 0 0 160px 0;
+}
+
+.location .btn {
+  margin: 0 0 185px 0;
+}
+
+/*Quotes*/
+
+.quotes {
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("../images/image-quotes.jpg");
+}
+
+.quotes .container{
+height:700px;
+position: relative;
+}
+
+.quotes-inner {
+  position:absolute;
+  width: 100%;
+  padding: 0 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color:$color-white;
+  p {
+    font-weight: $font-xlight;
+    font-size: 18px;
+  }
+  h4 {  font-size: 30px;}
+  h4 span {
+          color:$color-accent01;
+  }
+  p span {
+          font-weight: $font-medium;
+  }
+}
+
+.quotes img {
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+}
+
+
+
+.services {
+  background: $color-background-gray;
+}
+
+.team .gallery {}
+
+.gallery::before,
+.gallery::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.team-image img{
+  object-fit: cover;
+      width: 100%;
+      height: 100%;
+       opacity: 0.5;
+
+}
+
+.team-image {
+  position: relative;
+   height:400px;
+   width: 20%;
+   object-fit: cover;
+   float:left;
+}
+
+
+.pricing {
+  background: $color-background-gray;
+}
+
+
+
+/*Work*/
