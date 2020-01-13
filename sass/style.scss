@@ -66,6 +66,11 @@ img {
   font-weight: $font-bold;
 }
 
+a {
+  text-decoration: none;
+  color: $color-text;
+}
+
 h1 {
   font-weight: $font-thin;
   font-size: 60px;
@@ -160,27 +165,7 @@ nav {
 .logo {
 }
 
-ul {
-  list-style:none;
-  margin: 0;
-  padding: 0;
-  li {
-    text-align: right;
-    display: inline-block;
-    border:1px solid black;
-    padding-left:70px;
-    padding-top: 5px;
-    font-weight: $font-bold;
-    a {
-      color:$color-white;
-    }
-    ul {
-      li{
-        display:none;
-      }
-    }
-  }
-}
+
 
 .splash-inner {
     position: absolute;
@@ -345,3 +330,115 @@ position: relative;
 
 
 /*Work*/
+
+.location-image {
+  height: 760px;
+  width: 100%;
+  left:50%;
+  background-position: left center;
+  background-size: cover;
+  background-image: url("https://i.postimg.cc/3xtyhsPT/Photo-copy.png");
+
+}
+
+
+/*Final*/
+
+.final {
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("../images/image-final.jpg");
+}
+
+.final .container{
+height:750px;
+position: relative;
+}
+
+.final-inner {
+  position:absolute;
+  width: 100%;
+  padding: 0 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color:$color-white;
+  p {
+    font-weight: $font-xlight;
+    font-size: 18px;
+  }
+  h4 {  font-size: 30px;}
+  h4 span {
+          color:$color-accent01;
+  }
+  p span {
+          font-weight: $font-medium;
+  }
+}
+
+
+/*Footer*/
+
+footer {
+  height: 750px;
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("../images/image-a-big.png");
+}
+
+.nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left  {
+  display: flex;
+  align-items: center;
+  img {
+    padding-right: 20px;
+  }
+}
+
+.nav-right {
+  ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 620px;
+    li {
+      text-align: right;
+      padding-left:70px;
+      padding-top: 5px;
+      position: relative;
+      &:hover {
+        font-weight: 700;
+        padding-left:69px;
+        ul{
+          display: flex;
+        }
+      }
+      ul {
+        position: absolute;
+        flex-direction: column;
+        display:none;
+        width: 200px;
+        li {
+          padding-left:0px;
+          text-align: left;
+          font-weight: 400;
+          &:hover {
+            font-weight: 700;
+            padding-left:0px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
