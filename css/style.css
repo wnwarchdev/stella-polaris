@@ -90,10 +90,23 @@ h4 {
 .btn-light {
   background: none;
   border-color: #fff;
+  transition: all 0.3s;
+}
+
+.btn-light:hover {
+  border-color: #17daa3;
+  color: #17daa3;
+  transition: all 0.3s;
 }
 
 .btn-color {
   background: #17daa3;
+  transition: all 0.3s;
+}
+
+.btn-color:hover {
+  box-shadow: 0px 0px 75px 1px #17daa3;
+  transition: all 0.3s;
 }
 
 /*Global - section titleblocks*/
@@ -182,9 +195,11 @@ h4 {
 .nav-splash .nav-right ul li a {
   color: #fff;
   font-weight: 700;
+  transition: all 0.3s;
 }
 
 .nav-splash .nav-right ul li a:hover {
+  transition: all 0.3s;
   color: #17daa3;
   text-decoration: underline;
 }
@@ -215,11 +230,13 @@ h4 {
   line-height: 180px;
   width: 180px;
   color: #87949e;
+  transition: all 0.3s;
 }
 
 .about .fas:hover {
   background: #17daa3;
   color: #fff;
+  transition: all 0.3s;
 }
 
 .about h4 {
@@ -366,11 +383,13 @@ h4 {
   width: 70px;
   font-size: 30px;
   color: #17daa3;
+  transition: all 0.3s;
 }
 
 .card-icon i:hover {
   background: #17daa3;
   color: #fff;
+  transition: all 0.3s;
 }
 
 /*Team*/
@@ -402,6 +421,7 @@ h4 {
   top: 0;
   height: 100%;
   width: 100%;
+  opacity: 0.9;
   background: #17daa3;
   position: absolute;
   content: "";
@@ -489,8 +509,16 @@ h4 {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-align: baseline;
+      align-items: baseline;
   padding: 0 30px;
   font-size: 18px;
+  transition: all 0.3s;
+}
+
+.price-card button:hover {
+  font-size: 25px;
+  transition: all 0.3s;
 }
 
 /*Location*/
@@ -578,7 +606,68 @@ footer {
       align-items: center;
 }
 
+.nav-footer .nav-right ul li {
+  transition: all 0.3s;
+}
+
 .nav-footer .nav-right ul li:hover a {
   font-weight: 700;
+  transition: all 0.3s;
+}
+
+.nav-footer .nav-right ul li:hover a ul li a {
+  font-weight: 400;
+}
+
+.nav-footer .nav-right ul li ul li a {
+  font-weight: 400;
+}
+
+.nav-footer .nav-right ul li ul li a:hover {
+  transition: all 0.3s;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-splash {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .nav-right ul {
+    list-style: none;
+  }
+  .nav-right ul li {
+    text-align: right;
+    padding-left: 20px;
+    padding-top: 15px;
+    position: relative;
+  }
+  .nav-right ul li:hover ul {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .about .fas {
+    font-size: 40px;
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+  }
+  .about h4 {
+    margin: 30px 10px 0px;
+  }
+  .services .card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
+    -ms-flex-align: start;
+        align-items: flex-start;
+  }
+  .splash-inner {
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

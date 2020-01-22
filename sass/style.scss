@@ -14,8 +14,10 @@ $color-background-gray: #f9f9fa;
 $color-gray: #edeff1;
 $color-accent01: #17daa3;
 $color-headline: #576671;
-
 $color-text: #87949e;
+
+$transition: all 0.3s;
+
 
 /*Fix*/
 
@@ -108,16 +110,29 @@ h4{
   border-radius: 90px;
   font-weight: $font-bold;
   color: $color-white;
+
 }
 
 .btn-light {
   background:none;
   border-color: $color-white;
+  transition: $transition;
+  &:hover {
+    border-color: $color-accent01;
+    color: $color-accent01;
+    transition: $transition;
+  }
 }
 
 .btn-color {
   background: $color-accent01;
+  transition: $transition;
+  &:hover {
+    box-shadow: 0px 0px 75px 1px $color-accent01;
+    transition: $transition;
+  }
 }
+
 
 /*Global - section titleblocks*/
 
@@ -199,7 +214,9 @@ h4{
 .nav-splash .nav-right ul li a {
   color: $color-white;
   font-weight: $font-bold;
+  transition: $transition;
   &:hover {
+    transition: $transition;
     color: $color-accent01;
     text-decoration: underline;
   }
@@ -234,9 +251,11 @@ h4{
   line-height: 180px;
   width: 180px;
   color: $color-text;
+  transition: $transition;
   &:hover {
     background: $color-accent01;
     color:$color-white;
+    transition: $transition;
   }
 }
 
@@ -378,9 +397,11 @@ h4{
     width: 70px;
     font-size: 30px;
     color: $color-accent01;
+    transition: $transition;
     &:hover {
       background: $color-accent01;
       color:$color-white;
+      transition: $transition;
     }
   }
 }
@@ -414,6 +435,7 @@ h4{
   top:0;
   height:100%;
   width:100%;
+  opacity: 0.9;
   background: $color-accent01;
   position: absolute;
   content: "";
@@ -493,8 +515,14 @@ position: relative;
     text-align: left;
     display:flex;
     justify-content: space-between;
+    align-items: baseline;
     padding: 0 30px;
     font-size: 18px;
+    transition: $transition;
+    &:hover{
+      font-size: 25px;
+      transition: $transition;
+    }
   }
 }
 
@@ -580,6 +608,66 @@ footer {
   align-items: center;
 }
 
-.nav-footer .nav-right ul li:hover a {
-  font-weight: $font-bold;
+.nav-footer .nav-right ul li{
+  transition: $transition;
+  &:hover a {
+    font-weight: $font-bold;
+    transition: $transition;
+    ul li a {
+      font-weight: $font-regular;
+    }
+  }
+  ul li a {
+    font-weight: $font-regular;
+    &:hover {
+    transition: $transition;
+    font-weight: $font-bold;
+    text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .nav-splash {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-right {
+    ul {
+      list-style:none;
+      li {
+        text-align: right;
+        padding-left:20px;
+        padding-top: 15px;
+        position: relative;
+        &:hover ul {
+            display: flex;
+        }
+      }
+    }
+  }
+
+  .about .fas {
+    font-size: 40px;
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+  }
+
+  .about h4 {
+    margin: 30px 10px 0px;
+  }
+
+  .services .card {
+    display: flex;
+    flex: 1 1 50%;
+    align-items: flex-start;
+  }
+
+  .splash-inner {
+    width: 80%;
+  }
+
 }
