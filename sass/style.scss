@@ -128,7 +128,7 @@ h4{
   background: $color-accent01;
   transition: $transition;
   &:hover {
-    box-shadow: 0px 0px 75px 1px $color-accent01;
+    box-shadow: 0px 0px 25px 1px $color-accent01;
     transition: $transition;
   }
 }
@@ -145,7 +145,6 @@ h4{
 
 .title-block::after {
   position: absolute;
-  content: '';
   content: "";
   top: 48%;
   left: 50%;
@@ -185,7 +184,6 @@ h4{
       position: absolute;
       flex-direction: column;
       display:none;
-      width: 200px;
       li {
         padding-left:0px;
         text-align: left;
@@ -225,6 +223,8 @@ h4{
 
 .splash {
   height: 100vh;
+  min-height: 800px;
+  position: relative;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -285,7 +285,7 @@ h4{
 
 .work .container:first-of-type{
   background: $color-background-gray;
-  max-width: 100%; //nie za bardzo podoba mi sie to rozwiazanie ale :after nie zadziałaął....
+  max-width: 100%;
 }
 
 .work .wrapper:first-of-type{
@@ -303,6 +303,10 @@ h4{
   width: 50%;
   img {
     height: 400px;
+  }
+  &:last-of-type img {
+    width:100%;
+    height:auto;
   }
 }
 
@@ -594,7 +598,7 @@ position: relative;
 /*Footer*/
 
 footer {
-  height: 750px;
+  height: 650px;
   background-position: center center;
   background-size: auto;
   background-repeat: no-repeat;
@@ -628,6 +632,36 @@ footer {
 }
 
 @media only screen and (max-width: 992px) {
+
+  .container {
+      padding: 0 50px;
+  }
+
+  h2 {
+    padding-top:60px;
+  }
+
+  .title-block::after {
+    top: 42%;
+  }
+
+  .title-block {
+    height: 300px;
+  }
+
+  .location .btn,
+  .about .btn {
+    margin: 50px 0 50px 0;
+  }
+
+    .work .btn {
+      margin: 10px 0 10px 0;
+    }
+
+    .work h2 {
+      padding-top:10px;
+      margin-top:10px;
+    }
 
   .nav-splash {
     display: flex;
@@ -669,5 +703,272 @@ footer {
   .splash-inner {
     width: 80%;
   }
+
+  .services .card {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: flex-start;
+  }
+
+  .work .container {
+    height: 550px;
+  }
+
+  .work-image{
+    width: 50%;
+    img {
+      height: 250px;
+    }
+  }
+
+  .work-text p {
+    margin: 40px 0;
+    z-index: 20;
+  }
+
+  .card-icon {
+    flex: 1 1 40%;
+    width:40%;
+  }
+
+  .team-image {
+    position: relative;
+    height:200px;
+    width: 20%;
+    object-fit: cover;
+    float:left;
+  }
+
+  .team-name p {
+    top:50px;
+    font-size: 26px;
+  }
+
+  .pricing .wrapper {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+    height:275px;
+    margin-top: 15px;
+    width:49%;
+    .price-value {
+      padding-left: 20px;
+      height:115px;
+      margin:0;
+      border-bottom: 3px solid $color-background-gray;
+      h2 {
+        padding-top:20px;
+        font-size: 30px;
+        font-weight: $font-bold;
+      }
+      p {
+        opacity:0.4;
+      }
+    }
+
+    .price-text {
+      padding-left: 20px;
+      height:110px;
+      p {
+        padding: 10px 0;
+        line-height: 20px;
+        width:240px;
+      }
+    }
+      button {
+        height: 50px;
+        text-align: center;
+        &:hover{
+          font-size: inherit;
+          text-decoration: underline;
+      }
+      }
+    }
+
+  .location {
+    height: auto;
+    background-position: 50vw center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../images/image-map.png");
+    p{
+      margin: 30px 0;
+    }
+  }
+
+  .location-text h2 {
+      margin-top: 50px;
+    }
+
+  .nav-footer {
+    flex-direction: column;
+  }
+
+  footer {
+    height: 280px;
+    background-image:none;
+  }
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+      padding: 0 20px;
+  }
+
+  h1 {
+    font-weight: $font-thin;
+    font-size: 40px;
+    line-height:1;
+  }
+
+  h2 {
+    padding-top:30px;
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .about .fas {
+    font-size: 30px;
+    border-radius: 50%;
+    line-height: 60px;
+    width: 60px;
+  }
+
+  .title-block {
+    height: 200px;
+  }
+
+  .title-block::after {
+    top: 38%;
+  }
+
+  .about p {
+    margin: 20px 10px 0px;
+  }
+
+  .about .wrapper {
+    flex-direction: column;
+  }
+
+  .about .card {
+    margin-bottom: 40px;
+  }
+
+  .price-value {
+    height:100px;
+  }
+
+  .pricing .price-text {
+    padding-left: 20px;
+    height:120px;
+    p {
+      margin: 0;
+      font-size: 10px;
+      width: 100%;
+    }
+  }
+
+  .pricing .price-card{
+    height: 270px;
+    margin-bottom: 15px;
+        button {
+        height: 35px;
+        padding: 0 10px;
+        text-align: center;
+        margin-bottom:auto;
+        display: inline;
+        font-size: 12px;
+        span{
+          display: none;
+        }
+
+    }
+  }
+
+  .nav-right {
+    ul {
+      list-style:none;
+      li {
+        text-align: center;
+        padding-left:10px;
+        padding-top: 15px;
+        position: relative;
+        &:hover ul {
+            display: flex;
+        }
+      }
+    }
+  }
+
+.card-icon {
+  display: none;
+}
+
+.services h4 {
+font-weight: $font-bold;
+text-align: center;
+}
+
+.services p {
+  line-height: 16px;
+}
+
+.about h4 {
+  font-size: 20px;
+}
+
+.work .container{
+  height: auto;
+}
+
+.work-image{
+  width: 50%;
+  img {
+    display: none;
+  }
+}
+
+  .work .btn {
+        margin: 50px 0 50px 0
+  }
+
+
+  .work .wrapper {
+
+  flex-direction: column;
+  }
+
+.work-text {
+  width: 100%;
+  text-align: center;
+  h2 {
+    font-weight: $font-bold;
+  }
+  p{
+    text-align: justify;
+    margin-bottom: 0;
+  }
+}
+
+.location-text {
+  width:100%;
+  text-align: justify;
+}
+
+
 
 }
